@@ -1,0 +1,39 @@
+What is variable or random variable 
+===================================
+variable is placeholer which can store value or multiple values .
+
+In datasciece world , we call it as feature as well.
+
+
+Types of variables ?
+=====================
+1)Numerical variables
+
+2)categorical variables 
+
+1)Numerical variables : 
+========================
+Numerical varibales are again classified into two 
+1)
+
+
+Catergorical varibles : 
+======================
+These are defined based on some property 
+
+types of categorical varibles 
+
+a)Nominal b)ordinal
+
+a)Nominal : If there is no any numerical ordering relationship In between variables then we can Nominal Catogorical variables 
+ex:[males,female] 
+
+b)Ordinal :If there is some numerical ordering relationship In between variables then we can call ordinal catogorical variables 
+ex:10th,inter,degree
+
+
+Population : 
+============
+
+
+
