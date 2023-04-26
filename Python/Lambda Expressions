@@ -1,1 +1,43 @@
+Lambda Expressions :
+===================
+
+Lambda expressions are nothing but another way of creating functions in python.
+
+we can perform simpler operations by using lambda funtions 
+
+lambda expressions should be in single statement 
+
+Lambda expressions can be assiged to varible 
+
+Lmabda expressions can be passed as argument 
+
+Lamda expressions are also called as ananamous functions [functions which does not have any name]
+
+
+
+
+
+
+  practicals:
+  ===========
+  
+
+Lambda Expressions can be assigned to varaible :
+================================================
+my_func=lambda x:x**2
+
+print(my_func(2))
+
+
+
+
+Lambda Expressions can be passed as argument :
+=============================================
+
+def square(fn,x):
+    return fn(x)
+
+my_func=lambda x:x**2
+
+print(square(my_func,3))
 
