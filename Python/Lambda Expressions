@@ -13,6 +13,10 @@ Lmabda expressions can be passed as argument
 
 Lamda expressions are also called as ananamous functions [functions which does not have any name]
 
+we should Not use any annotations [x:int] in Lambda Expressions 
+
+we can use *args,**kwaargs in Lamda Expressions.
+
 
 
 
@@ -41,3 +45,10 @@ my_func=lambda x:x**2
 
 print(square(my_func,3))
 
+
+We can use * args in lambda Expression:
+======================================
+
+my_func=lambda *args:sum(args)
+
+print(my_func(1,2,3,4))
