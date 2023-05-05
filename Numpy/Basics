@@ -1,0 +1,20 @@
+
+Numpys are very important in machine learning computations 
+
+Every where we will be using numpys 
+
+
+System always understand arrays and matrics 
+
+What is an array ? 
+[1,2,3,4,5,6]
+arrays are datatype just in list in pandas but in terms of numpy we call it as array.
+
+Difference between matrix and array?
+Array can have 1 dimention and 2 dimention ....n dimention 
+matrix be deafult starts from 2 dimention array.Metrix is also an array
+
+
+import numpy as nd
+
+
