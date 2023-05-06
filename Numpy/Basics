@@ -15,6 +15,132 @@ Array can have 1 dimention and 2 dimention ....n dimention
 matrix be deafult starts from 2 dimention array.Metrix is also an array
 
 
+Arrays are  nothing but simple element which is holding dataset  in any dimention 
+
+
+matrics   -simial to the array.Derived from array class iteself .But it another data type.Matric is always an array and it subclass or child class of an array
+
+
 import numpy as nd
 
+->nd.array([1,2,3,4,5)]
+array([1, 2, 3, 4, 5])
 
+->nd.asanyarray([1,2,3,4,5])
+
+array([1, 2, 3, 4, 5])
+
+->nd.asarray([1,2,3,4,5])
+array([1, 2, 3, 4, 5])
+
+Above all three methods returns same thing but there might be slightly difference between them 
+
+Array can have 1 ,2 3,....dimention data
+
+Matrix :
+
+nd.matrix([1,2,3,4,5])
+matrix([[1, 2, 3, 4, 5]])
+
+Matrix at any point of have atlease have 2 dimention 
+
+
+
+fromfunction(fn,args):
+It takes two parameters .One is functions as paramter and another one.
+It is used to generate matrixs
+
+   0 1 2
+0  T F F
+1  F T F
+2  F F T
+
+Ex:1
+nd.fromfunction(lambda i,j: (i==j),(3,3))
+array([[ True, False, False],
+       [False,  True, False],
+       [False, False,  True]])
+      
+
+Ex:2
+nd.fromfunction(lambda i,j: (i*j),(4,4))
+array([[0., 0., 0., 0.],
+       [0., 1., 2., 3.],
+       [0., 2., 4., 6.],
+       [0., 3., 6., 9.]])
+
+By default numpy when ever we perform some operations it will return values in float types values.If we want interger then we have to use "dtype=int".
+
+
+dtype=int
+
+nd.fromfunction(lambda i,j: (i*j),(4,4),dtype=int)
+array([[0, 0, 0, 0],
+       [0, 1, 2, 3],
+       [0, 2, 4, 6],
+       [0, 3, 6, 9]])
+       
+
+
+(3,4,4) -> meaning 3 matrixs of (4,4) arrays  
+
+nd.fromfunction(lambda i,j,z: (i*j*z),(3,4,4),dtype=int)
+
+
+array([[[ 0,  0,  0,  0],
+        [ 0,  0,  0,  0],
+        [ 0,  0,  0,  0],
+        [ 0,  0,  0,  0]],
+
+       [[ 0,  0,  0,  0],
+        [ 0,  1,  2,  3],
+        [ 0,  2,  4,  6],
+        [ 0,  3,  6,  9]],
+
+       [[ 0,  0,  0,  0],
+        [ 0,  2,  4,  6],
+        [ 0,  4,  8, 12],
+        [ 0,  6, 12, 18]]])
+
+
+nd.fromfunction(lambda i,j,z,p: (i*j*z*p),(4,3,2,2),dtype=int)
+(4,3,2,2) - >means 4 dimention array of 3  -> (2,2) arrays in bundle 
+
+array([[[[0, 0],
+         [0, 0]],
+
+        [[0, 0],
+         [0, 0]],
+
+        [[0, 0],
+         [0, 0]]],
+
+
+       [[[0, 0],
+         [0, 0]],
+
+        [[0, 0],
+         [0, 1]],
+
+        [[0, 0],
+         [0, 2]]],
+
+
+       [[[0, 0],
+         [0, 0]],
+
+        [[0, 0],
+         [0, 2]],
+
+        [[0, 0],
+         [0, 4]]],
+
+
+       [[[0, 0],
+         [0, 0]],
+
+        [[0, 0],
+         [0, 3]],
+
+        [[0, 0],
+         [0, 6]]]])
