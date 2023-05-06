@@ -144,3 +144,110 @@ array([[[[0, 0],
 
         [[0, 0],
          [0, 6]]]])
+ 
+ 
+ 
+===================================================================================================
+
+we have an array If we want find dimention of array 
+
+a.ndim
+
+To find total elements in an array 
+a.size
+
+To get dimention and  and array rows and column size
+
+a.shape
+
+To get data types of elemnents of array
+a.dtype
+
+
+Coding Execrice: 
+
+a=nd.fromfunction(lambda i,j,z,p: (i*j*z*p),(4,3,2,2),dtype=int)
+
+a.size
+48
+a.shape
+(4, 3, 2, 2)
+a.ndim
+4
+
+
+
+
+=========================================================================================================
+If I have to prepare data .If we want to prepare use amount of data. 
+
+Question : Try to create an dataframe with 100 number of rows and 100 number columns .In this case how to create 
+
+
+DataFrame : It is an 2d array .SO we can not push 3 or 4 etc dimention array into dataframe .Means we can not create data frame by using more than 2 dimentional arrays 
+
+If we try to create Data Frame with more than 2 dimention array We will get below error messages 
+
+Ex:
+a=nd.fromfunction(lambda i,j,z,p: (i*j*z*p),(4,3,2,2),dtype=int)
+
+pd.createDataFrame(a)
+
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+~\AppData\Local\Temp\ipykernel_31416\1615723189.py in <module>
+----> 1 pd.createDataFrame(a)
+
+~\Anaconda3\lib\site-packages\pandas\__init__.py in __getattr__(name)
+    259         return _SparseArray
+    260 
+--> 261     raise AttributeError(f"module 'pandas' has no attribute '{name}'")
+    262 
+    263 
+
+AttributeError: module 'pandas' has no attribute 'createDataFrame'
+
+
+But We can create DataFrame by using 2 dimentional array 
+========================================================
+Ex:
+a=nd.fromfunction(lambda i,j: (i*j),(2,2),dtype=int)
+
+pd.DataFrame(a)
+
+
+If some asks to create data frama or dataset with 400 rowns 500 columns ,Yes we can create 
+
+a=nd.fromfunction(lambda i,j: (i*j),(400,500),dtype=int)
+
+And Moreover If they want create data frame with some logic In That case we can some logic in inside lambda .
+
+=======================================================================================================================================
+
+There is another function in numpy to generate random data by using "random" function 
+
+It has 1)random.rand
+       2)random.randint(4,50)
+       3)random.randn(4,5) 
+       
+  Exercise Coding:
+  ===============
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
