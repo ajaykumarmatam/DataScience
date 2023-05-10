@@ -210,6 +210,7 @@ AttributeError: module 'pandas' has no attribute 'createDataFrame'
 
 But We can create DataFrame by using 2 dimentional array 
 ========================================================
+
 Ex:
 a=nd.fromfunction(lambda i,j: (i*j),(2,2),dtype=int)
 
@@ -222,17 +223,192 @@ a=nd.fromfunction(lambda i,j: (i*j),(400,500),dtype=int)
 
 And Moreover If they want create data frame with some logic In That case we can some logic in inside lambda .
 
+note: We Create df with more than 2 dim array  using reshapping .
+
 =======================================================================================================================================
 
 There is another function in numpy to generate random data by using "random" function 
 
-It has 1)random.rand
+It has 1)random.rand(100,5)
        2)random.randint(4,50)
        3)random.randn(4,5) 
        
   Exercise Coding:
   ===============
+  nd.random.rand(100,3)
+  It will create 100 rows with 3 columns 
   
+  nd.random.randint(1,50)
+  It will generate random value everytime between specified values .Here everytime when we run return random integer between 1 to 50
+
+
+   nd.random.randn(5,5)
+   It will return 5 rows with 5 columns 
+   
+What is difference between rand() and randn():
+==============================================
+rand() functions gives simple random numbers 
+
+randn() functions gives  random numbers but which are normal standard distributed.[sigma =1,muea=0]
+
+
+question: 
+==========
+If anyone asks lie can you please dataframe with random standard normal distributed.
+Yes we can 
+
+pd.DataFrame(nd.random.randn(10,4))
+
+===============================================================================================================================================
+
+We tried to convert 2 dim array into datafram but we could not as dataframe is 2 dim.
+
+How to change dimention of data 
+requirement : 
+dimention of a=(4,3,2)
+convert above array into 2 dim 
+a.reshape(5,5)
+above one does not work.Because (5,5) means 25 elements But we have (4,3,2) total 24 elememts .Hence we could not convert 24 elemenst of array into 25 right
+
+a.reshape(1,24) -it works 
+a.reshape(8,3) -it works 
+a.reshape(3,8)-it wordks 
+---
+---
+--
+
+Thumbrule: elemnents should be same.
+
+After doing reshape we can convert that into dataframe.
+
+df=pd.DataFrame(a.reshape(3,8))
+
+====================================================================================================================================================
+reshape()
+--------
+By using reshape() we can convert any dim  into any dim 
+
+example: 2 dim into 4 dim or 5 dime .
+
+reshape(4,-1) or reshape(8,-1) 
+------------------------------
+what is meaning of -1 in above 
+example :
+--------
+a=(4,3,2)
+above one if 3 dimentional 
+now we are converting into 2 dim 
+total elements are (4,3,2)=24 
+
+a.reshape(4,-1)  ->Here -1 by default takes 6 for me (Because total number of elements are 24 .We have already specify 4 so -1 gives 6 hence we would be having total 24).
+
+a.reshape(8,-1) ->(here -1 gives 3 )
+
+a.reshape(5,-1) ->this is not worked (because 5 * anything wont be 24 )
+
+===========================================================================================================================================================
+In python we all know range() function
+range(4,10)
+[4,5,6,7,8,9]
+range(4,10,2)   ->2 is step
+[4,6,8]
+range(4,10,.2)  -It does not work in python because step parameter always to be integer 
+
+We have similar kind of range function in Numpys
+-----------------------------------------------
+arange()
+
+
+nd.arange(4,10,.2)
+
+array([4. , 4.2, 4.4, 4.6, 4.8, 5. , 5.2, 5.4, 5.6, 5.8, 6. , 6.2, 6.4,
+       6.6, 6.8, 7. , 7.2, 7.4, 7.6, 7.8, 8. , 8.2, 8.4, 8.6, 8.8, 9. ,
+       9.2, 9.4, 9.6, 9.8])
+
+
+Slicing operations in Numpy :
+============================
+same as in python 
+ex:
+
+a=nd.arange(4,10,.2)
+array([4. , 4.2, 4.4, 4.6, 4.8, 5. , 5.2, 5.4, 5.6, 5.8, 6. , 6.2, 6.4,
+       6.6, 6.8, 7. , 7.2, 7.4, 7.6, 7.8, 8. , 8.2, 8.4, 8.6, 8.8, 9. ,
+       9.2, 9.4, 9.6, 9.8])
+a[1:4]
+
+array([4.2, 4.4, 4.6])
+
+============================================================================================================================================
+Condition Based Filter:
+==========================
+
+Requ: Filter values greater than .5 
+Ex:
+arr=nd.random.rand(5,4)
+arr
+array([[0.55415036, 0.05741844, 0.41717781, 0.42330692],
+       [0.41636886, 0.25710016, 0.54719684, 0.00996372],
+       [0.21633908, 0.67492857, 0.3087947 , 0.52852864],
+       [0.01197613, 0.17024152, 0.75180366, 0.58159061],
+       [0.09189127, 0.63255261, 0.92045535, 0.08638944]])
+arr >.5
+array([[ True, False, False, False],
+       [False, False,  True, False],
+       [False,  True, False,  True],
+       [False, False,  True,  True],
+       [False,  True,  True, False]])
+arr[arr>.5]
+array([0.55415036, 0.54719684, 0.67492857, 0.52852864, 0.75180366,
+       0.58159061, 0.63255261, 0.92045535])
+ 
+ 
+ ===================================================================================================================================================
+ 
+Filter array based on rows and columns 
+--------------------------------------
+
+ex:
+arr[1:8,0:3]
+here 1:8 -> start from 1 st row and all the way to 8th row
+0:3 -> start from 0 column and end at 3 rd column 
+
+Note : By using above mechanism we can fecth specifc elements from array 
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+Matrix multiplications :
+==========================
+for multiplications we have to use "@" not "*".
+
+a=nd.array([[1,3],[4,3]])
+
+b=nd.array([[3,2],[3,3]])
+
+m=a@b [Not=a*b]
+
+
+========================================================================================================================================================
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
