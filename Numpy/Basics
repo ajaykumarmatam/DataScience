@@ -392,6 +392,127 @@ m=a@b [Not=a*b]
 
 ========================================================================================================================================================
 
+Methods which we are going to discuss following mainly used in deep learning .
+-----------------------------------------------------------------------------
+zeros()
+It will generate zero value of elements .
+
+Use case: may be we have to nullify values with zeros ect that kind of time zeros function is versy usefulle
+
+nd.zeros(5) -> gives 1 dimention araay 
+array([0., 0., 0., 0., 0.])
+
+nd.zeros((3,4))
+array([[0., 0., 0., 0.],
+       [0., 0., 0., 0.],
+       [0., 0., 0., 0.]])
+       
+ WE can generate Any dimention of an array.
+ 
+ 
+
+ones():
+-------
+nd.ones(5)
+array([1., 1., 1., 1., 1.])
+
+Note: zeros(),ones() available not twos(),thress() .beyond ones() none availale.
+
+How we want to generate an array with all 5's
+===============================================
+we can generate any number is values in array by following 
+
+nd.zeros((3,4))
+array([[0., 0., 0., 0.],
+       [0., 0., 0., 0.],
+       [0., 0., 0., 0.]])
+5+nd.zeros((3,4))
+
+array([[5., 5., 5., 5.],
+       [5., 5., 5., 5.],
+       [5., 5., 5., 5.]])
+       
+ ===============================================================================================================================================
+ nd.linspace(2,6)  - In which we specify what is starting point and what is ending point and specify how many numbers  want to be geneted between speacified range.
+ 
+ nd.linspace(2,6)
+ 
+ array([2.        , 2.08163265, 2.16326531, 2.24489796, 2.32653061,
+       2.40816327, 2.48979592, 2.57142857, 2.65306122, 2.73469388,
+       2.81632653, 2.89795918, 2.97959184, 3.06122449, 3.14285714,
+       3.2244898 , 3.30612245, 3.3877551 , 3.46938776, 3.55102041,
+       3.63265306, 3.71428571, 3.79591837, 3.87755102, 3.95918367,
+       4.04081633, 4.12244898, 4.20408163, 4.28571429, 4.36734694,
+       4.44897959, 4.53061224, 4.6122449 , 4.69387755, 4.7755102 ,
+       4.85714286, 4.93877551, 5.02040816, 5.10204082, 5.18367347,
+       5.26530612, 5.34693878, 5.42857143, 5.51020408, 5.59183673,
+       5.67346939, 5.75510204, 5.83673469, 5.91836735, 6.        ])
+
+By default it will generate some numbers .If we want to generate 10 numbers between specified range
+
+nd.linspace(2,6,10)
+
+array([2.        , 2.44444444, 2.88888889, 3.33333333, 3.77777778,
+       4.22222222, 4.66666667, 5.11111111, 5.55555556, 6.        ])
+       
+       
+ It will always generate 1 dim array.If we want to 2 dim or 3 dim etc .we can simply convert by using "reshape()".
+ 
+ ===============================================================================================================================================================
+ logspace() -It will work same as linspace.But only different is it will give logorithm values with specified range.
+ 
+ nd.logspace(2,10,10,base=2)
+ 
+ array([   4.        ,    7.4069977 ,   13.71590373,   25.39841683,
+         47.03150375,   87.09056001,  161.26989439,  298.63143413,
+        552.99058631, 1024.        ])
+ 
+ 
+ ===============================================================================================================================================================
+ max()
+ 
+ a=nd.arange(10)   ->It will return 1 dim array
+ 
+ a
+ 
+ array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+ 
+ a.max()
+ 
+ 9
+ 
+ ex:2
+ a=nd.arange(4,20).reshape(4,4)
+ a
+array([[ 4,  5,  6,  7],
+       [ 8,  9, 10, 11],
+       [12, 13, 14, 15],
+       [16, 17, 18, 19]])
+ a.max()
+ 19
+ 
+ Example3:
+ ----------
+ a=nd.arange(4,20).reshape(4,4)
+ a
+ array([[ 4,  5,  6,  7],
+       [ 8,  9, 10, 11],
+       [12, 13, 14, 15],
+       [16, 17, 18, 19]])
+ a.max(axis=1)
+ array([ 7, 11, 15, 19])
+ 
+ a.max(axis=0)
+ array([16, 17, 18, 19])
+ 
+  
+ 
+ 
+
+
+ 
+
+
 
 
 
